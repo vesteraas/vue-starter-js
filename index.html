@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 3 JavaScript - Tic Tac Toe</title>
+    <link rel="stylesheet" href="./assets/styles.css"/>
+    <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+    </script>
+</head>
+<body>
+<div id="app">
+    <div v-if="!winner">
+        <p v-if="nowPlaying === 'aiPlayer'">AI's turn</p>
+        <p v-if="nowPlaying === 'huPlayer'">Human's turn</p>
+    </div>
+    <div v-else>
+        <p v-if="winner === 'draw'" style="color: red"><b>It was a draw!</b></p>
+        <p v-if="winner === 'aiPlayer'">AI won!</p>
+        <p v-if="winner === 'huPlayer'">Human won!</p>
+    </div>
+    <tic-tac-toe difficulty="Hard" ref="board" @game-over="gameOver" @whos-turn="whosTurn"></tic-tac-toe>
+    <p v-if="winner" @click="reset">Click here to restart</p>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

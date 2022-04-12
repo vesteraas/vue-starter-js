@@ -1,0 +1,10 @@
+html {
+    font-family: Arial;
+}
+
+td {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
