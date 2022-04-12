@@ -23,7 +23,12 @@
         <p v-if="winner === 'aiPlayer'">AI won!</p>
         <p v-if="winner === 'huPlayer'">Human won!</p>
     </div>
-    <tic-tac-toe difficulty="Hard" ref="board" @game-over="gameOver" @whos-turn="whosTurn"></tic-tac-toe>
+    <tic-tac-toe
+            ref="board"
+            difficulty="Hard"
+            @game-over="gameOver"
+            @whos-turn="whosTurn"
+    ></tic-tac-toe>
     <p v-if="winner" @click="reset">Click here to restart</p>
 </div>
 
